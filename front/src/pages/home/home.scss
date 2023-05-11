@@ -1,0 +1,29 @@
+/* VARIABLES */
+@use "src/assets/styles/variables" as v;
+
+.home {
+  &__content {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 4rem;
+
+    &-text {
+      font-size: v.$text-size;
+      line-height: 3rem;
+      padding: 2rem;
+
+      & span {
+        color: white;
+        background: black;
+        padding: .25rem;
+      }
+    }
+  }
+
+  &__posts {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

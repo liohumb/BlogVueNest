@@ -1,0 +1,122 @@
+/* VARIABLES */
+@use "src/assets/styles/variables" as v;
+
+.post {
+  &__title {
+    position: relative;
+    text-transform: lowercase;
+    letter-spacing: .1rem;
+    margin: 0 0 4rem 0;
+
+    &-edit {
+      width: fit-content;
+      font-family: v.$title-font;
+      font-size: v.$title-size;
+      font-weight: bold;
+      text-align: center;
+      background: none;
+      border: none;
+      color: darkblue;
+      opacity: .75;
+    }
+  }
+
+  &__author {
+    position: absolute;
+    right: 0;
+    bottom: -25%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    font-family: v.$primary-font;
+    font-size: v.$small-text-size;
+    font-weight: 400;
+    opacity: .5;
+    
+    & span {
+      font-style: italic;
+      opacity: .33;
+    }
+
+    &-edit {
+      width: fit-content;
+      background: none;
+      border: none;
+      color: darkblue;
+      opacity: .75;
+    }
+  }
+
+  &__subtitle {
+    font-size: v.$big-text-size;
+    padding: 2rem;
+
+    &-edit {
+      width: 100%;
+      font-weight: bold;
+      background: none;
+      border: none;
+      text-align: center;
+      color: darkblue;
+      opacity: .75;
+    }
+  }
+
+  &__text {
+    height: 40vh;
+    font-size: v.$text-size;
+    text-align: center;
+    padding: 4rem 20%;
+
+    &-edit {
+      width: 100%;
+      padding: 4rem 20%;
+      background: none;
+      border: none;
+      color: darkblue;
+      opacity: .75;
+    }
+  }
+
+  &__buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin: 4rem 0;
+
+    &-edit,
+    &-delete,
+    &-save {
+      font-family: v.$title-font;
+      font-size: v.$big-text-size;
+      letter-spacing: .25rem;
+      transition: all .1s linear;
+      cursor: pointer;
+    }
+
+    &-edit {
+      &:hover {
+        color: white;
+        text-shadow: .01rem 0 1rem darkgreen;
+      }
+    }
+
+    &-delete {
+      &:hover {
+        color: white;
+        text-shadow: .01rem 0 1rem darkred;
+      }
+    }
+
+    &-save {
+      &:hover {
+        color: white;
+        text-shadow: .01rem 0 1rem darkblue;
+      }
+    }
+  }
+}

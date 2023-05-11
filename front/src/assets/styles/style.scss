@@ -1,0 +1,109 @@
+/* VARIABLES */
+@use "variables" as v;
+
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@200;400;700;800&display=swap');
+
+/* DEFAULT */
+* {
+  margin: 0;
+  box-sizing: border-box;
+
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  font-family: v.$primary-font;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+input,
+textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* DEFAULT CLASSES */
+.section {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 12vh 0;
+
+  &__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem;
+  }
+
+  &__title {
+    font-family: v.$title-font;
+    font-size: v.$title-size;
+  }
+
+  &__content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 4rem;
+    padding: 4rem;
+  }
+}

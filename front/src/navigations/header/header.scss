@@ -1,0 +1,44 @@
+/* VARIABLES */
+@use "src/assets/styles/variables" as v;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all .4s ease;
+
+  &__active {
+    color: white;
+    background: black;
+    transition: all .4s ease;
+  }
+
+  &__logo {
+    font-family: v.$title-font;
+    font-size: v.$title-size;
+    transition: all .2s linear;
+    padding: 0 5%;
+
+    &:hover {
+      color: white;
+      text-shadow: .01rem 0 1rem black;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 0 10%;
+
+    &-link {
+      font-size: v.$big-text-size;
+      letter-spacing: .25rem;
+    }
+  }
+}

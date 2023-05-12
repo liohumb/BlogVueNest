@@ -1,7 +1,7 @@
 <template>
     <main class="main">
         <Header/>
-        <router-view/>
+        <router-view :key="$route.path"/>
     </main>
 </template>
 

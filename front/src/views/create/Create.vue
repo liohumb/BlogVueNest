@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Form from '../../components/form/Form.vue';
+import Form from '../../components/form/postForm/postForm.vue';
 import axios from 'axios';
 import {server} from '../../utils/helper.js';
 import Routes from '../../Routes.js';

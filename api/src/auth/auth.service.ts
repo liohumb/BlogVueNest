@@ -14,7 +14,7 @@ export class AuthService {
     if (!user) return null;
     const passwordValid = await bcrypt.compare(password, user.password);
     if (!user) {
-      throw new NotAcceptableException('could not find the user');
+      throw new NotAcceptableException('utilisateur inconnue');
     }
     if (user && passwordValid) {
       return user;
@@ -25,6 +25,7 @@ export class AuthService {
     const payload = { username: user.username, sub: user._id };
     return {
       access_token: this.jwtService.sign(payload),
+      user_id: user._id,
     };
   }
 }

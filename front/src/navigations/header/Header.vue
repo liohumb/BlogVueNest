@@ -11,6 +11,14 @@
             <li>
                 <router-link to="/contact" class="header__menu-link">Contact</router-link>
             </li>
+            <li>
+                <router-link v-if="!user" to="/connexion" class="header__menu-link">
+                    <i class='bx bxs-user header__menu-link--icon'/>
+                </router-link>
+                <span v-if="user" v-on:click="disconnect" class="header__menu-link">
+                    <i class='bx bx-log-out header__menu-link--icon'/>
+                </span>
+            </li>
         </ul>
     </header>
 </template>
@@ -20,7 +28,8 @@ export default {
     data() {
         return {
             windowTop: 0,
-            headerScroll: false
+            headerScroll: false,
+            user: localStorage.getItem('user')
         }
     },
     mounted() {
@@ -34,7 +43,11 @@ export default {
             this.windowTop = e.target.documentElement.scrollTop
             console.log(this.windowTop)
 
-            this.headerScroll = this.windowTop > 75;
+            this.headerScroll = this.windowTop > 75
+        },
+        disconnect() {
+            localStorage.removeItem('user')
+            window.location.reload()
         }
     }
 }

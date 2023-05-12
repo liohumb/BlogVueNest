@@ -32,13 +32,22 @@
 
   &__menu {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    justify-content: center;
     gap: 4rem;
     padding: 0 10%;
 
     &-link {
+      display: grid;
+      place-items: center;
       font-size: v.$big-text-size;
       letter-spacing: .25rem;
+      cursor: pointer;
+
+      &--icon {
+        font-size: 2.5rem;
+        padding: .25rem 0;
+      }
     }
   }
 }

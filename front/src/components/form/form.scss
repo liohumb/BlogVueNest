@@ -21,7 +21,7 @@
       display: none;
     }
 
-    & textarea{
+    & textarea {
       width: calc(50% + 4rem);
       height: 25vh;
       font-size: v.$small-text-size;
@@ -34,7 +34,8 @@
     }
 
     &-content {
-      width: 25%;
+      position: relative;
+      width: 33%;
       height: 4rem;
       display: flex;
       flex-direction: column;
@@ -55,16 +56,56 @@
         padding: 0 1.25rem;
       }
 
-       & button {
-         font-size: v.$text-size;
-         letter-spacing: .1rem;
-         cursor: pointer;
-         transition: all .4s ease;
-         
-         &:hover {
-           letter-spacing: .25rem;
-         }
-       }
+      & i {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        font-size: 3.75rem;
+        opacity: .5;
+      }
+
+      & button {
+        font-size: v.$text-size;
+        letter-spacing: .1rem;
+        cursor: pointer;
+        transition: all .4s ease;
+
+        &:hover {
+          letter-spacing: .25rem;
+        }
+      }
+
+      &--error {
+        width: 100%;
+        font-size: v.$text-size;
+        text-align: center;
+        color: darkred;
+      }
+    }
+
+    &-instructions {
+      position: absolute;
+      top: 50%;
+      left: -10%;
+      transform: translate(-100%, -50%);
+      text-align: end;
+      padding: 1rem 2rem;
+
+      &:after {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, -50%);
+        content: '';
+        width: 90%;
+        height: .1rem;
+        background: black;
+      }
+
+      & p {
+        font-size: v.$very-small-text-size;
+      }
     }
   }
 }

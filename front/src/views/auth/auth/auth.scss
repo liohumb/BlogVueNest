@@ -2,6 +2,15 @@
 @use "src/assets/styles/variables" as v;
 
 .auth {
+
+  &__title {
+    &-error {
+      color: white;
+      background: darkred;
+      padding: 0 2rem;
+    }
+  }
+
   &__change {
     font-size: v.$text-size;
 

@@ -35,7 +35,6 @@
 <script>
 import axios from 'axios';
 import {server} from '../../utils/helper.js';
-import Routes from '../../Routes.js';
 
 export default {
     data() {
@@ -73,7 +72,7 @@ export default {
         },
         deletePost() {
             axios.delete(`${server.baseURL}/blog/delete?postID=${this.id}`)
-                .then(Routes.push({name: 'posts'}))
+                .then(this.$router.go('post'))
         }
     }
 }

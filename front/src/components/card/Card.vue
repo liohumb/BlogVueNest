@@ -5,7 +5,7 @@
             <div class="card__content">
                 <span class="card__content-subtitle">{{post.description}}</span>
                 <p class="card__content-text">
-                    {{post.body.length > 222 ? post.body.substring(0, 222) + '…' : post.body}}
+                    {{post?.body && post.body.length > 222 ? post.body.substring(0, 222) + '…' : post.body}}
                 </p>
             </div>
             <span class="card__author">{{post.author}}</span>

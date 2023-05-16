@@ -1,6 +1,6 @@
 <template>
     <form class="form"
-          @submit.prevent="okSubmit && $emit('on-submit', form)">
+          @submit.prevent="button === 'inscription' ? okSubmit && $emit('on-submit', form) : $emit('on-submit', form)">
         <div class="form__contents">
             <div class="form__contents-content">
                 <label for="username"></label>

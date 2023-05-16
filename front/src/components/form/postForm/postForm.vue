@@ -1,5 +1,5 @@
 <template>
-    <form class="form" @submit.prevent="$emit('on-submit', form)">
+    <form class="form" @submit.prevent="createPost">
         <div class="form__contents">
             <div class="form__contents-content">
                 <label for="title"></label>
@@ -35,6 +35,9 @@
 </template>
 
 <script>
+import axios from "axios";
+import {server} from "../../../utils/helper.js";
+
 export default {
     props: {
         post: {
@@ -44,14 +47,20 @@ export default {
     data() {
         return {
             form: {
-                title: this.post?.title || '',
-                description: this.post?.description || '',
-                body: this.post?.body || '',
-                author: this.post?.author || '',
-                date_posted: this.post?.date_posted || new Date().toLocaleDateString()
+                title: '',
+                description: '',
+                body: '',
+                author: '',
+                date_posted: new Date().toLocaleDateString()
             }
         }
-    }
+    },
+    methods: {
+        createPost() {
+            axios.post(`${server.baseURL}/blog/post`, this.form)
+                .then(this.$router.go('post'))
+        }
+    },
 }
 </script>
 

@@ -41,8 +41,6 @@ export default {
     methods: {
         onScroll(e) {
             this.windowTop = e.target.documentElement.scrollTop
-            console.log(this.windowTop)
-
             this.headerScroll = this.windowTop > 75
         },
         disconnect() {

@@ -17,10 +17,9 @@
 </template>
 
 <script>
-import authForm from "../../../components/form/authForm/authForm.vue";
-import axios from "axios";
-import {server} from "../../../utils/helper.js";
-import Routes from "../../../Routes.js";
+import authForm from "../../../components/form/authForm/authForm.vue"
+import axios from "axios"
+import {server} from "../../../utils/helper.js"
 
 export default {
     data() {
@@ -45,9 +44,9 @@ export default {
                 .then(res => {
                     if (this.page === 'connexion') {
                         localStorage.setItem('user', res.data.user_id)
-                        Routes.push({name: 'home'})
+                        this.$router.go('home')
                     } else if (this.page === 'register') {
-                        Routes.push({name: 'connexion'})
+                        this.$router.go('connexion')
                     }
                 })
                 .catch(e => {
